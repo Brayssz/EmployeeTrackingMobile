@@ -21,6 +21,8 @@ import com.example.employeetracking.api.PostCallback;
 import com.example.employeetracking.api.PostTask;
 import com.example.employeetracking.utils.Loader;
 import com.example.employeetracking.utils.Messenger;
+import com.example.employeetracking.utils.SetUserStatus;
+import com.example.employeetracking.utils.StatusSessionManager;
 import com.google.android.material.button.MaterialButton;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -155,6 +157,10 @@ public class ActivityRecordInfo extends AppCompatActivity implements PostCallbac
     @Override
     public void onPostSuccess(String responseData) {
         loader.dismissLoader();
+
+        StatusSessionManager.getInstance(this).saveStatus("OnTravel");
+
+        new SetUserStatus(this).setUserStatus("ontravel");
 
         Activity activity = new ActivityLogin();
 

@@ -93,7 +93,7 @@ public class ActivityLogin extends AppCompatActivity implements PostCallback {
         List<User> users = apiResponse.getUser();
 
         if(apiResponse.getStatus().equals("success")) {
-            Intent intent = new Intent(ActivityLogin.this, ActivityChooseTravel.class);
+            Intent intent = new Intent(ActivityLogin.this, HomeActivity.class);
 
             SessionManager.getInstance(this).createLoginSession(users.get(0));
 

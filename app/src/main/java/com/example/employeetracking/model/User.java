@@ -14,6 +14,8 @@ public class User implements Parcelable {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("status")
+    private String status;
     @SerializedName("id")
     private String user_id;
 
@@ -44,6 +46,10 @@ public class User implements Parcelable {
 
     public String getUserId() {
         return user_id;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public void setUserId(String user_id) {
